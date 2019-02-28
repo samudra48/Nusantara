@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         if((text1.contains("Username"))&&((text2.contains("password")))) {
             Toast.makeText(this, "Login sukses", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Registrasi.class);
+            Intent intent = new Intent(MainActivity.this, DashboardUser.class);
             startActivity(intent);
         }else if((text1.matches("")||text2.matches(""))){
             Toast.makeText(this,"Isikan Username dan password", Toast.LENGTH_SHORT).show();
