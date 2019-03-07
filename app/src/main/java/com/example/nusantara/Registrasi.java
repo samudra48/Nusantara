@@ -12,15 +12,21 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+
+import modal.User;
+import sql.DatabaseHelper;
+
 public class Registrasi extends AppCompatActivity {
     private static final String TAG_ACTIVITY = Registrasi.class.getSimpleName();
 
     TextView textView12;
+    TextView textView13;
     TextView textView_name;
     TextView textView_email;
     TextView textView_psw;
     TextView kp;
-    TextView textView13;
+
+
     TextView textView_login;
     EditText editText_name;
     EditText editText_email;
@@ -37,12 +43,8 @@ public class Registrasi extends AppCompatActivity {
 
         initView();
         initListener();
-        initObjects();
 
 
-        }
-
-    private void initObjects() {
 
     }
 
@@ -64,9 +66,13 @@ public class Registrasi extends AppCompatActivity {
         editText_kp = (EditText) findViewById(R.id.editText_kp);
         editText_psw = (EditText) findViewById(R.id.editText_psw);
         register = (Button) findViewById(R.id.register);
-    }
-}
 
+
+    }
+
+
+
+    }
 
 
 
