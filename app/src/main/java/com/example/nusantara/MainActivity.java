@@ -38,4 +38,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Login gagal/Username password salah", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void registrasi(View view) {
+    }
 }
