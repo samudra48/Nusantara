@@ -6,34 +6,67 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class Registrasi extends AppCompatActivity {
     private static final String TAG_ACTIVITY = Registrasi.class.getSimpleName();
 
-    EditText username;
-        EditText email;
-        EditText phone;
-        RadioGroup Gender;
-        EditText Birthday;
-        EditText Password;
+    TextView textView12;
+    TextView textView_name;
+    TextView textView_email;
+    TextView textView_psw;
+    TextView kp;
+    TextView textView13;
+    TextView textView_login;
+    EditText editText_name;
+    EditText editText_email;
+    EditText editText_kp;
+    EditText editText_psw;
+    Button register;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrasi);
+        getSupportActionBar().hide();
 
-            username = findViewById(R.id.usernameText);
-            email = findViewById(R.id.emailText);
-            phone = findViewById(R.id.phoneText);
-            Gender = findViewById(R.id.Gendergrup);
-            Birthday = findViewById(R.id.dateText);
-            Password = findViewById(R.id.PasswordText);
+        initView();
+        initListener();
+        initObjects();
 
+
+        }
+
+    private void initObjects() {
 
     }
 
-    public void SignUp(View view) {
-    }}
+    private void initListener() {
+        register.setOnClickListener((View.OnClickListener) this);
+    }
+
+
+    private void initView() {
+        textView12 = (TextView) findViewById(R.id.textView12);
+        textView_name = (TextView) findViewById(R.id.textView_name);
+        textView_email = (TextView) findViewById(R.id.textView_email);
+        textView_psw = (TextView) findViewById(R.id.textView_psw);
+        kp = (TextView) findViewById(R.id.kp);
+        textView13 = (TextView) findViewById(R.id.textView13);
+        textView_login = (TextView) findViewById(R.id.textView_login);
+        editText_name = (EditText) findViewById(R.id.editText_name);
+        editText_email = (EditText) findViewById(R.id.editText_email);
+        editText_kp = (EditText) findViewById(R.id.editText_kp);
+        editText_psw = (EditText) findViewById(R.id.editText_psw);
+        register = (Button) findViewById(R.id.register);
+    }
+}
+
+
+
+
