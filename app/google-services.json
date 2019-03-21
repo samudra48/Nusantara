@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "624381169100",
+    "firebase_url": "https://nusantara-33606.firebaseio.com",
+    "project_id": "nusantara-33606",
+    "storage_bucket": "nusantara-33606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624381169100:android:93d577f90b850b24",
+        "android_client_info": {
+          "package_name": "com.example.nusantara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624381169100-b7aksqi4pumkugt2bibrhdij56vn6km7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl6VRa7SaW4SylmAk4SHS3qKM6_NTZBms"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
