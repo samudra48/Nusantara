@@ -72,6 +72,8 @@ public class DashboardUser extends AppCompatActivity {
                 startActivity(new Intent(DashboardUser.this, MainActivity.class));
                 finish();
                 break;
+            case R.id.account:
+                startActivity(new Intent(this, AccountActivity.class));
 
         }
         return false;
