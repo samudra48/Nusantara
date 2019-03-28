@@ -3,9 +3,9 @@ package com.example.nusantara;
 public class ItemDashboard {
     String title;
     String description;
-    String image;
+    int image;
 
-    public ItemDashboard(String title, String description, String image) {
+    public ItemDashboard(String title, String description, int image) {
         this.title = title;
         this.description = description;
         this.image = image;
@@ -27,11 +27,11 @@ public class ItemDashboard {
         this.description = description;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }
