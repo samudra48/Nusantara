@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Nusantara</string>
+
+    <string-array name="rekomendasi_title">
+        <item>Tempat Wisata</item>
+        <item>Kuliner</item>
+        <item>Kebudayaan</item>
+    </string-array>
+
+    <string-array name="info_rekomendasi">
+        <item> 10 rekomendasi tempat wisata yang bagus </item>
+        <item> 10 kuliner rekomendasi yang banyak diminati diNusantara</item>
+        <item> 10 Kebudayaan yang ada di Indonesia </item>
+    </string-array>
+
+    <array name="gambar_rekomendasi">
+        <item>@drawable/pemandangan</item>
+        <item>@drawable/makanan</item>
+        <item>@drawable/kebudayaan</item>
+    </array>
 </resources>

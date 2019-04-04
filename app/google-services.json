@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "108925401197",
+    "firebase_url": "https://nusantara-375b4.firebaseio.com",
+    "project_id": "nusantara-375b4",
+    "storage_bucket": "nusantara-375b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108925401197:android:93d577f90b850b24",
+        "android_client_info": {
+          "package_name": "com.example.nusantara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108925401197-l58jh7vh5ena9ubodmu9uoas6vgf1as4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nusantara",
+            "certificate_hash": "f7c0de21d62f86bb67fe11219b931c194778d752"
+          }
+        },
+        {
+          "client_id": "108925401197-5itgmva8d0f3el57ggqflup1q5r9gnkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCktladviBrNgMjO7dW_HnKLeXjDKHNseM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108925401197-5itgmva8d0f3el57ggqflup1q5r9gnkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
