@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageview"
+        android:id="@+id/img_upload"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginStart="8dp"
@@ -21,7 +21,7 @@
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <EditText
-        android:id="@+id/txt_nama_menu"
+        android:id="@+id/txt_nama_daerah"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,11 +33,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageview" />
+        app:layout_constraintTop_toBottomOf="@+id/img_upload" />
 
 
     <EditText
-        android:id="@+id/txt_desk_menu"
+        android:id="@+id/txt_desk"
         android:layout_width="0dp"
         android:layout_height="133dp"
 
@@ -50,11 +50,11 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nama_menu" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_nama_daerah" />
 
 
     <Button
-        android:id="@+id/btn_menu"
+        android:id="@+id/btn_unggah"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_desk_menu" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_desk" />
 
 
 </android.support.constraint.ConstraintLayout>
