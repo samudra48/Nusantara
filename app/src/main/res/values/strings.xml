@@ -18,7 +18,7 @@
         <item>@drawable/kebudayaan</item>
     </array>
 
-    <string-array name ="provinsi">
+    <string-array name="provinsi">
         <item>Aceh</item>
         <item>Bali</item>
         <item> Banten</item>
@@ -55,25 +55,43 @@
         <item>Yogyakarta</item>
     </string-array>
     <string-array name="ibukota">
-    <item> Ambon </item>
+        <item> Ambon </item>
         <item> Sofifi</item>
         <item>Mataram</item>
         <item>Kupang</item>
         <item>Jayapura</item>
+        <item>Manokwari</item>
+        <item>Pekanbaru</item>
         <item></item>
     </string-array>
 
     <string-array name="lambang_provinsi">
-        <item> </item>
+        <item>@drawable/lambangriau</item>
     </string-array>
 
     <string-array name="makanan_khas">
-        <item> </item>
+        <item> Bau Peapi(Riau)</item>
+        <item> Cucur (Riau)</item>
+        <item>Roti Pawa</item>
     </string-array>
+
+
+    <array name="gambar_makanan">
+        <item>@drawable/baupeapi</item>
+        <item>@drawable/cucur</item>
+        <item>@drawable/rotipawa</item>
+
+    </array>
+
 
     <string-array name="Rumah_adat">
         <item> </item>
     </string-array>
+
+    <array name="gambar_rumah">
+
+    </array>
+
 
     <string-array name="pakaian_adat">
         <item> </item>
