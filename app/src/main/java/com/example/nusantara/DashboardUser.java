@@ -143,9 +143,11 @@ public class DashboardUser extends AppCompatActivity {
                 startActivity(new Intent(DashboardUser.this, MainActivity.class));
                 finish();
                 break;
+
             case R.id.option_search:
 
                 break;
+
 
         }
         return false;
