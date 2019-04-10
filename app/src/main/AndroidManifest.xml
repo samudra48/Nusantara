@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".tampilanitem"></activity>
+        <activity android:name=".DeskripsiActivity"></activity>
         <activity android:name=".FileData"></activity>
         <activity android:name=".UnggahFoto" />
         <activity

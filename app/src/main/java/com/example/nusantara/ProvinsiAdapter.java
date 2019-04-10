@@ -13,10 +13,10 @@ import android.widget.TextView;
 import java.util.List;
 
 public class ProvinsiAdapter extends RecyclerView.Adapter<ProvinsiAdapter.ProvinsiHolder> {
-    private List<Object> provinsi;
+    private List<Provinsi> provinsi;
     private Context context;
 
-    public ProvinsiAdapter(Context context, List<Object> provinsi) {
+    public ProvinsiAdapter(Context context, List<Provinsi> provinsi) {
         this.provinsi = provinsi;
         this.context = context;
     }
@@ -29,14 +29,15 @@ public class ProvinsiAdapter extends RecyclerView.Adapter<ProvinsiAdapter.Provin
 
     @Override
     public void onBindViewHolder(@NonNull ProvinsiHolder provinsiHolder, int i) {
-        Object o = provinsi.get(i);
-        provinsiHolder.tvProv.setText(o.toString());
+        final Provinsi o = provinsi.get(i);
+        provinsiHolder.tvProv.setText(o.Nama);
 
         provinsiHolder.bgProv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, SplashActivity.class);
-                i.putExtra("provinsi",provinsi.toString());
+                Intent i = new Intent(context, DeskripsiActivity.class);
+                i.putExtra("nama",o.Nama);
+                i.putExtra("ibukota",o.Ibukota);
                 context.startActivity(i);
             }
         });
@@ -50,6 +51,7 @@ public class ProvinsiAdapter extends RecyclerView.Adapter<ProvinsiAdapter.Provin
     public class ProvinsiHolder extends RecyclerView.ViewHolder {
         private TextView tvProv;
         private ConstraintLayout bgProv;
+
         public ProvinsiHolder(@NonNull View itemView) {
             super(itemView);
 

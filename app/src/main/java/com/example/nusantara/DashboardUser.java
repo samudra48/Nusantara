@@ -44,8 +44,8 @@ public class DashboardUser extends AppCompatActivity {
     List<ItemDashboard> list;
     List<ItemDashboard> sList;
 
-    List<Object> provinsiList;
-    List<Object> provinsiFull;
+    List<Provinsi> provinsiList;
+    List<Provinsi> provinsiFull;
 
     FirebaseFirestore db;
 
@@ -80,10 +80,9 @@ public class DashboardUser extends AppCompatActivity {
 
                 if (task.isSuccessful()){
                     for (QueryDocumentSnapshot doc : task.getResult()){
-                        Map<String, Object> provinsiMap = new HashMap<>();
-                        provinsiMap = doc.getData();
-                        provinsiList.add(provinsiMap.get("Nama"));
-                        provinsiFull.add(provinsiMap.get("Nama"));
+                        Provinsi prov = doc.toObject(Provinsi.class);
+                        provinsiList.add(prov);
+                        provinsiFull.add(prov);
                     }
                     provinsiAdapter.notifyDataSetChanged();
                 }
@@ -164,8 +163,8 @@ public class DashboardUser extends AppCompatActivity {
                 if (!s.isEmpty()) {
                     provinsiList.clear();
                     String search = s.toLowerCase();
-                    for (Object item : provinsiFull) {
-                        if (item.toString().toLowerCase().contains(search)){
+                    for (Provinsi item : provinsiFull) {
+                        if (item.Nama.toLowerCase().contains(search)){
                             provinsiList.add(item);
                         }
                     }
