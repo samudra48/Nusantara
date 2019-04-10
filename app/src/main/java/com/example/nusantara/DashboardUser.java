@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -22,11 +23,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DashboardUser extends AppCompatActivity {
 
@@ -35,8 +44,16 @@ public class DashboardUser extends AppCompatActivity {
     List<ItemDashboard> list;
     List<ItemDashboard> sList;
 
+    List<Object> provinsiList;
+    List<Object> provinsiFull;
+
+    FirebaseFirestore db;
+
     private AdapterDashboard mAdapter;
     private RecyclerView mRecycle;
+
+    private ProvinsiAdapter provinsiAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,23 +62,42 @@ public class DashboardUser extends AppCompatActivity {
         mRecycle = findViewById(R.id.recycle);
         btnFab = findViewById(R.id.fab);
 
+        provinsiList = new ArrayList<>();
+        provinsiFull = new ArrayList<>();
+
+        sList = new ArrayList<>();
+        list = new ArrayList<>();
+
+        provinsiAdapter = new ProvinsiAdapter(provinsiList);
+//        mAdapter= new AdapterDashboard(list ,this);
+        mRecycle.setLayoutManager(new LinearLayoutManager(this));
+        mRecycle.setAdapter(provinsiAdapter);
+
+        db = FirebaseFirestore.getInstance();
+        db.collection("provinsi").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()){
+                    for (QueryDocumentSnapshot doc : task.getResult()){
+                        Map<String, Object> provinsiMap = new HashMap<>();
+                        provinsiMap = doc.getData();
+                        provinsiList.add(provinsiMap.get("Nama"));
+                        provinsiFull.add(provinsiMap.get("Nama"));
+                    }
+                    provinsiAdapter.notifyDataSetChanged();
+                }
+            }
+
+        });
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
+
         if (user == null){
             Intent i = new Intent(DashboardUser.this, MainActivity.class);
             finish();
             startActivity(i);
-        }
-
-        sList = new ArrayList<>();
-        list = new ArrayList<>();
-        mAdapter= new AdapterDashboard(list ,this);
-        mRecycle.setLayoutManager(new LinearLayoutManager(this));
-        mRecycle.setAdapter(mAdapter);
-
-        if (user == null){
-            startActivity(new Intent(DashboardUser.this, MainActivity.class));
-            finish();
         }
 
         btnFab.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +107,7 @@ public class DashboardUser extends AppCompatActivity {
             }
         });
 
-        initializeData();
+//        initializeData();
     }
 
     private void initializeData() {
@@ -112,18 +148,31 @@ public class DashboardUser extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
+//                if (!s.isEmpty()) {
+//                    list.clear();
+//                    String search = s.toLowerCase();
+//                    for (ItemDashboard item : sList) {
+//                        if (item.title.toLowerCase().contains(search)){
+//                            list.add(item);
+//                        }
+//                    }
+//                }else{
+//                    list.addAll(sList);
+//                }
+//                mAdapter.notifyDataSetChanged();
+
                 if (!s.isEmpty()) {
-                    list.clear();
+                    provinsiList.clear();
                     String search = s.toLowerCase();
-                    for (ItemDashboard item : sList) {
-                        if (item.title.toLowerCase().contains(search)){
-                            list.add(item);
+                    for (Object item : provinsiFull) {
+                        if (item.toString().toLowerCase().contains(search)){
+                            provinsiList.add(item);
                         }
                     }
                 }else{
-                    list.addAll(sList);
+                    provinsiList.addAll(provinsiFull);
                 }
-                mAdapter.notifyDataSetChanged();
+                provinsiAdapter.notifyDataSetChanged();
                 return false;
             }
         });
