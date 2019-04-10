@@ -107,7 +107,6 @@ public class DashboardUser extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 return false;
-
             }
 
             @Override
@@ -130,9 +129,7 @@ public class DashboardUser extends AppCompatActivity {
 
         return true;
     }
-
-
-
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
