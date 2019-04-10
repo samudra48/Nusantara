@@ -60,7 +60,12 @@
         <item>Mataram</item>
         <item>Kupang</item>
         <item>Jayapura</item>
-        <item></item>
+        <item>Banda Aceh</item>
+        <item>Denpasar</item>
+        <item>Serang</item>
+        <item>Bengkulu</item>
+        <item>Gorontalo</item>
+        <item>Jakarta</item>
     </string-array>
 
     <string-array name="lambang_provinsi">
@@ -68,7 +73,9 @@
     </string-array>
 
     <string-array name="makanan_khas">
-        <item> </item>
+        <item>Mie Aceh, Sate Matang, Martabak Aceh (Aceh)</item>
+        <item>Sate Lilit, Bebek Bekutu, Nasi Jinggo(Bali)</item>
+        <item>Angeun Lada, Pecak Bandeng, Rabeg Banten(Banten)</item>
     </string-array>
 
     <string-array name="Rumah_adat">
