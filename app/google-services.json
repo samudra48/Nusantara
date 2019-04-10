@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "108925401197-p06d51d3fkqcgfo4t3ubup2p5hu83h4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nusantara",
+            "certificate_hash": "fd41938d14e313d619dcad2d770a97e5187cf017"
+          }
+        },
+        {
           "client_id": "108925401197-l58jh7vh5ena9ubodmu9uoas6vgf1as4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -33,20 +41,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "108925401197-5itgmva8d0f3el57ggqflup1q5r9gnkt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
