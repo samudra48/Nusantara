@@ -53,6 +53,7 @@ public class DashboardUser extends AppCompatActivity {
             startActivity(i);
         }
 
+        sList = new ArrayList<>();
         list = new ArrayList<>();
         mAdapter= new AdapterDashboard(list ,this);
         mRecycle.setLayoutManager(new LinearLayoutManager(this));
@@ -86,19 +87,19 @@ public class DashboardUser extends AppCompatActivity {
         for (int i = 0; i < rekomendasi.length; i++) {
             list.add(new ItemDashboard(rekomendasi[i], rekomendasiinfo[i],
                     gambarrekomendasi.getResourceId(i, 0)));
+            sList.add(new ItemDashboard(rekomendasi[i], rekomendasiinfo[i],
+                    gambarrekomendasi.getResourceId(i, 0)));
         }
 
         gambarrekomendasi.recycle();
         mAdapter.notifyDataSetChanged();
-
-        sList = list;
-        Log.d("DashBoardUser", "onQueryTextChange: "+sList.toString());
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.option_menu, menu);
+
         SearchView searchView = (SearchView) menu.findItem(R.id.option_search).getActionView();
         searchView.setQueryHint("Pencarian");
 
@@ -114,19 +115,16 @@ public class DashboardUser extends AppCompatActivity {
                 if (!s.isEmpty()) {
                     list.clear();
                     String search = s.toLowerCase();
-                    Log.d("DashBoardUser", "onQueryTextChange: "+search);
-                    for (int i = 0; i < sList.size();i++) {
-                        if (sList.get(i).title.contains(search)){
-                            Log.d("DashBoardUser", "onQueryTextChange: "+sList.get(i).toString());
-                            list.add(sList.get(i));
+                    for (ItemDashboard item : sList) {
+                        if (item.title.toLowerCase().contains(search)){
+                            list.add(item);
                         }
                     }
                 }else{
-                    Log.d("DashBoardUser", "onQueryTextChange: true");
                     list.addAll(sList);
                 }
                 mAdapter.notifyDataSetChanged();
-                return true;
+                return false;
             }
         });
 
