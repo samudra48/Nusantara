@@ -60,7 +60,7 @@
         <item>Mataram</item>
         <item>Kupang</item>
         <item>Jayapura</item>
-        <item></item>
+        <item>Manokwari</item>
     </string-array>
 
     <string-array name="lambang_provinsi">
@@ -68,7 +68,13 @@
     </string-array>
 
     <string-array name="makanan_khas">
-        <item> </item>
+        <item>Papeda,Ikan Komu Asar
+,Sambal Colo-Colo,Kohu-Kohu,Nasi Lapola,Roti Kering Kenari (Maluku) </item>
+        <item> Ikan Kuah pala banda, Ikan asap, Gatang Kenari, papeda, kasbi komplet, Lapis palaro, Halua Kenari (Maluku Utara) </item>
+   <item> Ayam Taliwang,  Sate Buldak,  Plecing Kangkung, Jaje Tulak Lapis Poteng, Sate Pusut,  Kelaq Kelor, Nasi Kotaraja, Nasi Balap Puyung, Ares (Nusa Tenggara Barat) </item>
+<item> Kolo, Catamak jagung,  Jagung Bose, Se'I Daging Sapi Asap, Ikan Kuah Belimbing, Lawar Ikan, Pelepah manuk,  Sambal Teri,Karmanaci (Nusa Tenggara Timur) </item>
+    <item> Papeda,  Udang Selingkuh, Martabak Sagu,,  Ikan Bungkus, Sate Ulat Sagu (Papuan) </item>
+<item> Kue Lontar, Ikan Bakar Manokwari,Sagu Lempeng, Telur Balado Pedas Sorong Papua, Aunu Senebre, Ikan Bakar Sambal Colo-Colo, Keripik Keladi,Roti Abon Gulung, Es Buah Matoa,Es Kelapa Muda Asam Manis (Papua Barat)</item>
     </string-array>
 
     <string-array name="Rumah_adat">
@@ -100,7 +106,10 @@
     </string-array>
 
     <string-array name="Tempat_Wisata">
-        <item> </item>
+        <item> Nusa Pombo, Pantai Liang, Pantai Nestapa, Pantai Pintu Kota, Pantai Santai,Benteng Ferangi,Benteng Amsterdam, Musium Siwalima,Masjid Wapauwe (Maluku)</item>
+<item> Benteng Oranye,  Gunung Api Gamala,  Desa Marikurubu, Goa Segea, Pulau Morotai, Batu Angus, Pulau Halmahera, Air terjun cibi cebi,  Kedaton Sultan Bacan, Masjid Sultan Ternate (Maluku Utara) </item>
+
+
     </string-array>
 
     <string-array name="Peninggalan_Budaya">
