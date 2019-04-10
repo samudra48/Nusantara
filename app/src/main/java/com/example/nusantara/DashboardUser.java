@@ -68,7 +68,7 @@ public class DashboardUser extends AppCompatActivity {
         sList = new ArrayList<>();
         list = new ArrayList<>();
 
-        provinsiAdapter = new ProvinsiAdapter(provinsiList);
+        provinsiAdapter = new ProvinsiAdapter(this, provinsiList);
 //        mAdapter= new AdapterDashboard(list ,this);
         mRecycle.setLayoutManager(new LinearLayoutManager(this));
         mRecycle.setAdapter(provinsiAdapter);
