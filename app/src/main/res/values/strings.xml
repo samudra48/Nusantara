@@ -55,7 +55,12 @@
         <item>Yogyakarta</item>
     </string-array>
     <string-array name="ibukota">
-    <item> </item>
+    <item> Ambon </item>
+        <item> Sofifi</item>
+        <item>Mataram</item>
+        <item>Kupang</item>
+        <item>Jayapura</item>
+        <item></item>
     </string-array>
 
     <string-array name="lambang_provinsi">
