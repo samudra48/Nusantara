@@ -62,10 +62,11 @@
         <item>Kupang</item>
         <item>Jayapura</item>
         <item>Manokwari</item>
+        <item>Pekanbaru</item>
     </string-array>
 
     <string-array name="lambang_provinsi">
-        <item> </item>
+        <item>@drawable/lambangriau</item>
     </string-array>
 
     <string-array name="makanan_khas">
@@ -80,7 +81,19 @@ Kolo, Catamak jagung,  Jagung Bose, Se'I Daging Sapi Asap, Ikan Kuah Belimbing, 
 ]]> </item>
     <item> Papeda,  Udang Selingkuh, Martabak Sagu,,  Ikan Bungkus, Sate Ulat Sagu (Papuan) </item>
 <item> Kue Lontar, Ikan Bakar Manokwari,Sagu Lempeng, Telur Balado Pedas Sorong Papua, Aunu Senebre, Ikan Bakar Sambal Colo-Colo, Keripik Keladi,Roti Abon Gulung, Es Buah Matoa,Es Kelapa Muda Asam Manis (Papua Barat)</item>
+        <item> Bau Peapi(Riau)</item>
+        <item> Cucur (Riau)</item>
+        <item>Roti Pawa</item>
     </string-array>
+
+
+    <array name="gambar_makanan">
+        <item>@drawable/baupeapi</item>
+        <item>@drawable/cucur</item>
+        <item>@drawable/rotipawa</item>
+
+    </array>
+
 
     <string-array name="Rumah_adat">
         <item> </item>

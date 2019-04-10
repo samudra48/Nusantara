@@ -12,9 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FileData">
-
-        </activity>
+        <activity android:name=".tampilanitem"></activity>
+        <activity android:name=".FileData"></activity>
         <activity android:name=".UnggahFoto" />
         <activity
             android:name=".RegisterActivity"
@@ -31,8 +30,7 @@
         <activity android:name=".DashboardUser" />
         <activity
             android:name=".MainActivity"
-            android:label="Login to your app">
-        </activity>
+            android:label="Login to your app"></activity>
     </application>
 
 </manifest>
