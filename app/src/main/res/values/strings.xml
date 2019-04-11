@@ -28,9 +28,9 @@
         <item>Jambi</item>
         <item>Jawa Barat</item>
         <item>Jawa Tengah</item>
-        <item> Jawa Timur</item>
+        <item>Jawa Timur</item>
         <item>Kalimantan Barat</item>
-        <item> Kalimantan Selatan</item>
+        <item>Kalimantan Selatan</item>
         <item>Kalimantan Tengah</item>
         <item>Kalimantan Timur</item>
         <item>Kalimantan Utara</item>
@@ -54,29 +54,46 @@
         <item>Sumatera Utara</item>
         <item>Yogyakarta</item>
     </string-array>
+
     <string-array name="ibukota">
-    <item> Ambon </item>
-        <item> Sofifi</item>
+        <item>Ambon</item>
+        <item>Sofifi</item>
         <item>Mataram</item>
         <item>Kupang</item>
         <item>Jayapura</item>
-        <item>Banda Aceh</item>
-        <item>Denpasar</item>
-        <item>Serang</item>
-        <item>Bengkulu</item>
-        <item>Gorontalo</item>
-        <item>Jakarta</item>
+        <item>Manokwari</item>
+        <item>Pekanbaru</item>
     </string-array>
 
     <string-array name="lambang_provinsi">
-        <item> </item>
+        <item>@drawable/lambangriau</item>
     </string-array>
 
     <string-array name="makanan_khas">
-        <item>Mie Aceh, Sate Matang, Martabak Aceh (Aceh)</item>
-        <item>Sate Lilit, Bebek Bekutu, Nasi Jinggo(Bali)</item>
-        <item>Angeun Lada, Pecak Bandeng, Rabeg Banten(Banten)</item>
+        <item>
+        Papeda,Ikan Komu Asar
+,Sambal Colo-Colo,Kohu-Kohu,Nasi Lapola,Roti Kering Kenari (Maluku)
+        </item>
+        <item> Ikan Kuah pala banda, Ikan asap, Gatang Kenari, papeda, kasbi komplet, Lapis palaro, Halua Kenari (Maluku Utara) </item>
+        <item> Ayam Taliwang,  Sate Buldak,  Plecing Kangkung, Jaje Tulak Lapis Poteng, Sate Pusut,  Kelaq Kelor, Nasi Kotaraja, Nasi Balap Puyung, Ares (Nusa Tenggara Barat) </item>
+        <item> ![<![CDATA[
+Kolo, Catamak jagung,  Jagung Bose, Se'I Daging Sapi Asap, Ikan Kuah Belimbing, Lawar Ikan, Pelepah manuk,  Sambal Teri,Karmanaci (Nusa Tenggara Timur)
+]]> </item>
+        <item> Papeda,  Udang Selingkuh, Martabak Sagu,,  Ikan Bungkus, Sate Ulat Sagu (Papuan) </item>
+        <item> Kue Lontar, Ikan Bakar Manokwari,Sagu Lempeng, Telur Balado Pedas Sorong Papua, Aunu Senebre, Ikan Bakar Sambal Colo-Colo, Keripik Keladi,Roti Abon Gulung, Es Buah Matoa,Es Kelapa Muda Asam Manis (Papua Barat)</item>
+        <item> Bau Peapi(Riau)</item>
+        <item> Cucur (Riau)</item>
+        <item>Roti Pawa</item>
     </string-array>
+
+
+    <array name="gambar_makanan">
+        <item>@drawable/baupeapi</item>
+        <item>@drawable/cucur</item>
+        <item>@drawable/rotipawa</item>
+
+    </array>
+
 
     <string-array name="Rumah_adat">
         <item> </item>
@@ -106,8 +123,11 @@
         <item> </item>
     </string-array>
 
-    <string-array name="Tempat_Wisata">
-        <item> </item>
+    <string-array name="tempat_wisata">
+        <item> Nusa Pombo, Pantai Liang, Pantai Nestapa, Pantai Pintu Kota, Pantai Santai,Benteng Ferangi,Benteng Amsterdam, Musium Siwalima,Masjid Wapauwe (Maluku)</item>
+        <item> Benteng Oranye,  Gunung Api Gamala,  Desa Marikurubu, Goa Segea, Pulau Morotai, Batu Angus, Pulau Halmahera, Air terjun cibi cebi,  Kedaton Sultan Bacan, Masjid Sultan Ternate (Maluku Utara) </item>
+
+
     </string-array>
 
     <string-array name="Peninggalan_Budaya">
