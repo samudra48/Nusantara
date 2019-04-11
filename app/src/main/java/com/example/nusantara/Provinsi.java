@@ -25,36 +25,4 @@ public class Provinsi {
     public void setNama(String nama) {
         Nama = nama;
     }
-
-    public String getIbukota() {
-        return Ibukota;
-    }
-
-    public void setIbukota(String ibukota) {
-        Ibukota = ibukota;
-    }
-
-    public String getTempatwisata() {
-        return Tempatwisata;
-    }
-
-    public void setTempatwisata(String tempatwisata) {
-        Tempatwisata = tempatwisata;
-    }
-
-    public String getBudaya() {
-        return Budaya;
-    }
-
-    public void setBudaya(String budaya) {
-        Budaya = budaya;
-    }
-
-    public String getMakanankhas() {
-        return Makanankhas;
-    }
-
-    public void setMakanankhas(String makanankhas) {
-        Makanankhas = makanankhas;
-    }
 }
