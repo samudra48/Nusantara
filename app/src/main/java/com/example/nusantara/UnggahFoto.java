@@ -201,7 +201,9 @@ public class UnggahFoto extends AppCompatActivity {
                 if (task.isSuccessful()){
                     dialog.dismiss();
 
-                    backToMain();
+//                    backToMain();
+                    Intent i = new Intent(UnggahFoto.this, TampilanData.class);
+                    startActivity(i);
                 }
             }
         });
@@ -218,4 +220,5 @@ public class UnggahFoto extends AppCompatActivity {
     private void toast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
+
 }

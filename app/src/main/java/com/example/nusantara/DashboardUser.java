@@ -51,6 +51,7 @@ public class DashboardUser extends AppCompatActivity {
 
     private AdapterDashboard mAdapter;
     private RecyclerView mRecycle;
+    private RecyclerView rvProv;
 
     private ProvinsiAdapter provinsiAdapter;
 
@@ -58,37 +59,6 @@ public class DashboardUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_user);
-
-        mRecycle = findViewById(R.id.recycle);
-        btnFab = findViewById(R.id.fab);
-
-        provinsiList = new ArrayList<>();
-        provinsiFull = new ArrayList<>();
-
-        sList = new ArrayList<>();
-        list = new ArrayList<>();
-
-        provinsiAdapter = new ProvinsiAdapter(this, provinsiList);
-//        mAdapter= new AdapterDashboard(list ,this);
-        mRecycle.setLayoutManager(new LinearLayoutManager(this));
-        mRecycle.setAdapter(provinsiAdapter);
-
-        db = FirebaseFirestore.getInstance();
-        db.collection("provinsi").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-                if (task.isSuccessful()){
-                    for (QueryDocumentSnapshot doc : task.getResult()){
-                        Provinsi prov = doc.toObject(Provinsi.class);
-                        provinsiList.add(prov);
-                        provinsiFull.add(prov);
-                    }
-                    provinsiAdapter.notifyDataSetChanged();
-                }
-            }
-
-        });
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -99,6 +69,42 @@ public class DashboardUser extends AppCompatActivity {
             startActivity(i);
         }
 
+        mRecycle = findViewById(R.id.recycle);
+        btnFab = findViewById(R.id.fab);
+        rvProv = findViewById(R.id.rv_prov);
+
+        provinsiList = new ArrayList<>();
+        provinsiFull = new ArrayList<>();
+
+        sList = new ArrayList<>();
+        list = new ArrayList<>();
+
+        provinsiAdapter = new ProvinsiAdapter(this, provinsiList);
+        mAdapter= new AdapterDashboard(list ,this);
+
+        rvProv.setLayoutManager(new LinearLayoutManager(this));
+        rvProv.setAdapter(provinsiAdapter);
+
+        mRecycle.setLayoutManager(new LinearLayoutManager(this));
+        mRecycle.setAdapter(mAdapter);
+
+        db = FirebaseFirestore.getInstance();
+//        db.collection("provinsi").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//
+//                if (task.isSuccessful() && task.getResult() != null){
+//                    for (QueryDocumentSnapshot doc : task.getResult()){
+//                        Provinsi prov = doc.toObject(Provinsi.class);
+//                        provinsiList.add(prov);
+//                        provinsiFull.add(prov);
+//                    }
+//                    provinsiAdapter.notifyDataSetChanged();
+//                }
+//            }
+//
+//        });
+
         btnFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +112,7 @@ public class DashboardUser extends AppCompatActivity {
             }
         });
 
-//        initializeData();
+        initializeData();
     }
 
     private void initializeData() {
@@ -146,31 +152,35 @@ public class DashboardUser extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-//                if (!s.isEmpty()) {
-//                    list.clear();
-//                    String search = s.toLowerCase();
-//                    for (ItemDashboard item : sList) {
-//                        if (item.title.toLowerCase().contains(search)){
-//                            list.add(item);
-//                        }
-//                    }
-//                }else{
-//                    list.addAll(sList);
-//                }
-//                mAdapter.notifyDataSetChanged();
-
                 if (!s.isEmpty()) {
-                    provinsiList.clear();
+                    list.clear();
                     String search = s.toLowerCase();
-                    for (Provinsi item : provinsiFull) {
-                        if (item.Nama.toLowerCase().contains(search)){
-                            provinsiList.add(item);
+                    for (ItemDashboard item : sList) {
+                        if (item.title.toLowerCase().contains(search)){
+                            list.add(item);
                         }
                     }
                 }else{
-                    provinsiList.addAll(provinsiFull);
+                    list.addAll(sList);
                 }
-                provinsiAdapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetChanged();
+
+//                if (!s.isEmpty()) {
+//                    mRecycle.setVisibility(View.GONE);
+//                    rvProv.setVisibility(View.VISIBLE);
+//                    provinsiList.clear();
+//                    String search = s.toLowerCase();
+//                    for (Provinsi item : provinsiFull) {
+//                        if (item.Nama.toLowerCase().contains(search)){
+//                            provinsiList.add(item);
+//                        }
+//                    }
+//                }else{
+//                    mRecycle.setVisibility(View.VISIBLE);
+//                    rvProv.setVisibility(View.GONE);
+//                    provinsiList.addAll(provinsiFull);
+//                }
+//                provinsiAdapter.notifyDataSetChanged();
                 return false;
             }
         });

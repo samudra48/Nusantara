@@ -10,8 +10,8 @@ public class Provinsi {
     public Provinsi() {
     }
 
-    public Provinsi(String nama, String ibukota, String tempatwisata, String budaya, String makanankhas) {
-        Nama = nama;
+    public Provinsi(String Nama, String ibukota, String tempatwisata, String budaya, String makanankhas) {
+        Nama = Nama;
         Ibukota = ibukota;
         Tempatwisata = tempatwisata;
         Budaya = budaya;

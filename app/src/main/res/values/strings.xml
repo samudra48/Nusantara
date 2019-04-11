@@ -18,7 +18,7 @@
         <item>@drawable/kebudayaan</item>
     </array>
 
-    <string-array name ="provinsi">
+    <string-array name="provinsi">
         <item>Aceh</item>
         <item>Bali</item>
         <item> Banten</item>

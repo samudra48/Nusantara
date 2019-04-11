@@ -11,9 +11,17 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_prov"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recycle" />
+            android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycle" >
+
+        </android.support.v7.widget.RecyclerView>
 
 
         <android.support.design.widget.FloatingActionButton
@@ -23,6 +31,7 @@
             android:layout_gravity="right|bottom"
             android:layout_margin="16dp"
             android:src="@drawable/ic_launcher_add" />
+
     </LinearLayout>
 </ScrollView>
 
