@@ -18,7 +18,7 @@
         <item>@drawable/kebudayaan</item>
     </array>
 
-    <string-array name ="provinsi">
+    <string-array name="provinsi">
         <item>Aceh</item>
         <item>Bali</item>
         <item> Banten</item>
@@ -75,12 +75,12 @@
 ,Sambal Colo-Colo,Kohu-Kohu,Nasi Lapola,Roti Kering Kenari (Maluku)
         </item>
         <item> Ikan Kuah pala banda, Ikan asap, Gatang Kenari, papeda, kasbi komplet, Lapis palaro, Halua Kenari (Maluku Utara) </item>
-   <item> Ayam Taliwang,  Sate Buldak,  Plecing Kangkung, Jaje Tulak Lapis Poteng, Sate Pusut,  Kelaq Kelor, Nasi Kotaraja, Nasi Balap Puyung, Ares (Nusa Tenggara Barat) </item>
-<item> ![<![CDATA[
+        <item> Ayam Taliwang,  Sate Buldak,  Plecing Kangkung, Jaje Tulak Lapis Poteng, Sate Pusut,  Kelaq Kelor, Nasi Kotaraja, Nasi Balap Puyung, Ares (Nusa Tenggara Barat) </item>
+        <item> ![<![CDATA[
 Kolo, Catamak jagung,  Jagung Bose, Se'I Daging Sapi Asap, Ikan Kuah Belimbing, Lawar Ikan, Pelepah manuk,  Sambal Teri,Karmanaci (Nusa Tenggara Timur)
 ]]> </item>
-    <item> Papeda,  Udang Selingkuh, Martabak Sagu,,  Ikan Bungkus, Sate Ulat Sagu (Papuan) </item>
-<item> Kue Lontar, Ikan Bakar Manokwari,Sagu Lempeng, Telur Balado Pedas Sorong Papua, Aunu Senebre, Ikan Bakar Sambal Colo-Colo, Keripik Keladi,Roti Abon Gulung, Es Buah Matoa,Es Kelapa Muda Asam Manis (Papua Barat)</item>
+        <item> Papeda,  Udang Selingkuh, Martabak Sagu,,  Ikan Bungkus, Sate Ulat Sagu (Papuan) </item>
+        <item> Kue Lontar, Ikan Bakar Manokwari,Sagu Lempeng, Telur Balado Pedas Sorong Papua, Aunu Senebre, Ikan Bakar Sambal Colo-Colo, Keripik Keladi,Roti Abon Gulung, Es Buah Matoa,Es Kelapa Muda Asam Manis (Papua Barat)</item>
         <item> Bau Peapi(Riau)</item>
         <item> Cucur (Riau)</item>
         <item>Roti Pawa</item>
@@ -125,7 +125,7 @@ Kolo, Catamak jagung,  Jagung Bose, Se'I Daging Sapi Asap, Ikan Kuah Belimbing, 
 
     <string-array name="tempat_wisata">
         <item> Nusa Pombo, Pantai Liang, Pantai Nestapa, Pantai Pintu Kota, Pantai Santai,Benteng Ferangi,Benteng Amsterdam, Musium Siwalima,Masjid Wapauwe (Maluku)</item>
-<item> Benteng Oranye,  Gunung Api Gamala,  Desa Marikurubu, Goa Segea, Pulau Morotai, Batu Angus, Pulau Halmahera, Air terjun cibi cebi,  Kedaton Sultan Bacan, Masjid Sultan Ternate (Maluku Utara) </item>
+        <item> Benteng Oranye,  Gunung Api Gamala,  Desa Marikurubu, Goa Segea, Pulau Morotai, Batu Angus, Pulau Halmahera, Air terjun cibi cebi,  Kedaton Sultan Bacan, Masjid Sultan Ternate (Maluku Utara) </item>
 
 
     </string-array>
