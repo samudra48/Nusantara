@@ -33,7 +33,8 @@ public class LoginAdminActivity extends AppCompatActivity {
     }
     private void validate(String username,String password){
         if ((username == "Nusantara") && (password == "NusantaraApps")){
-
+            Intent intent = new Intent(LoginAdminActivity.this,AdminDashboardActivity.class);
+            startActivity(intent);
         }
         else {
             counter--;
