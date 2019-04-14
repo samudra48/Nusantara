@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,9 +36,9 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         etName = findViewById(R.id.editName);
-        etEmail = findViewById(R.id.editEmail);
-        etPass = findViewById(R.id.editPassword);
-        btnLogin = findViewById(R.id.buttonLogin);
+        etEmail = findViewById(R.id.edit_user);
+        etPass = findViewById(R.id.edit_pass);
+        btnLogin = findViewById(R.id.buttonLoginAdmin);
         btnRegist = findViewById(R.id.buttonRegister);
         mAuth = FirebaseAuth.getInstance();
 
@@ -106,5 +105,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void toast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    public void loginAdmin(View view) {
+        Intent intent = new Intent(RegisterActivity.this,LoginAdminActivity.class);
+        startActivity(intent);
     }
 }
