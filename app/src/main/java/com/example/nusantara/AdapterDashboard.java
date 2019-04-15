@@ -18,6 +18,8 @@ import java.util.List;
 
 public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.MyViewHolder> {
     List<ItemDashboard> list;
+//    List<Object> list;
+
     Context context;
 
     AdapterDashboard(List<ItemDashboard> list, Context context) {

@@ -201,9 +201,9 @@ public class UnggahFoto extends AppCompatActivity {
                 if (task.isSuccessful()){
                     dialog.dismiss();
 
-//                    backToMain();
-                    Intent i = new Intent(UnggahFoto.this, TampilanData.class);
-                    startActivity(i);
+                    backToMain();
+//                    Intent i = new Intent(UnggahFoto.this, DashboardUser.class);
+//                    startActivity(i);
                 }
             }
         });

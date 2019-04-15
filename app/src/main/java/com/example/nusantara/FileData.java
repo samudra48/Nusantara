@@ -24,22 +24,6 @@ public class FileData extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-        String[] provinsi = getResources().getStringArray(R.array.provinsi);
-        String[] ibukota = getResources().getStringArray(R.array.ibukota);
-        String[] makanan = getResources().getStringArray(R.array.makanan_khas);
-        String[] tempat_wisata = getResources().getStringArray(R.array.tempat_wisata);
 
-        for(String string : provinsi){
-            HashMap<String, String> map = new HashMap<>();
-            map.put("Nama",string);
-            db.collection("provinsi").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentReference> task) {
-                    if (task.isSuccessful()){
-
-                    }
-                }
-            });
-        }
     }
 }

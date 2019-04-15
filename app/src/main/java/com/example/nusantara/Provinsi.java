@@ -10,19 +10,51 @@ public class Provinsi {
     public Provinsi() {
     }
 
-    public Provinsi(String Nama, String ibukota, String tempatwisata, String budaya, String makanankhas) {
-        Nama = Nama;
-        Ibukota = ibukota;
-        Tempatwisata = tempatwisata;
-        Budaya = budaya;
-        Makanankhas = makanankhas;
+    public Provinsi(String Nama, String Ibukota, String Tempatwisata, String Budaya, String Makanankhas) {
+        this.Nama = Nama;
+        this.Ibukota = Ibukota;
+        this.Tempatwisata = Tempatwisata;
+        this.Budaya = Budaya;
+        this.Makanankhas = Makanankhas;
     }
 
     public String getNama() {
         return Nama;
     }
 
-    public void setNama(String nama) {
-        Nama = nama;
+    public void setNama(String Nama) {
+        this.Nama = Nama;
+    }
+
+    public String getIbukota() {
+        return Ibukota;
+    }
+
+    public void setIbukota(String Ibukota) {
+        this.Ibukota = Ibukota;
+    }
+
+    public String getTempatwisata() {
+        return Tempatwisata;
+    }
+
+    public void setTempatwisata(String Tempatwisata) {
+        this.Tempatwisata = Tempatwisata;
+    }
+
+    public String getBudaya() {
+        return Budaya;
+    }
+
+    public void setBudaya(String Budaya) {
+        this.Budaya = Budaya;
+    }
+
+    public String getMakanankhas() {
+        return Makanankhas;
+    }
+
+    public void setMakanankhas(String Makanankhas) {
+        this.Makanankhas = Makanankhas;
     }
 }

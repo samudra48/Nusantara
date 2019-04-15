@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TampilanData"></activity>
         <activity android:name=".tampilanitem" />
         <activity android:name=".DeskripsiActivity" />
         <activity android:name=".FileData" />
