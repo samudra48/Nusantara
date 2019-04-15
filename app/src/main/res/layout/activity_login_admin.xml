@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:hint="df"
-        android:text="User Login "
+        android:text="Admin Login "
         android:textColor="#000"
         android:textSize="20dp" />
 
@@ -27,13 +27,12 @@
         android:id="@+id/edit_user"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Enter Email"
+        android:hint="Enter Username"
         android:inputType="textEmailAddress"
         android:textColor="#000" />
 
@@ -58,16 +57,6 @@
         android:layout_marginTop="20dp"
         android:background="@color/colorDarkApp"
         android:text="Log IN "
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonLoginAdmin"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorDarkApp"
-        android:text="NOT A USER? | SIGN UP"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>

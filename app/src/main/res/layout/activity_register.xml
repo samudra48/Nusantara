@@ -46,7 +46,7 @@
         android:layout_below="@+id/editName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/editEmail"
+        android:id="@+id/edit_user"
         android:gravity="center"/>
 
     <EditText
@@ -56,24 +56,24 @@
         android:hint="Enter Password"
         android:textColor="#000"
         android:ems="10"
-        android:layout_below="@+id/editEmail"
+        android:layout_below="@+id/edit_user"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/editPassword"
+        android:id="@+id/edit_pass"
         android:gravity="center"/>
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editPassword"
+        android:layout_below="@+id/edit_pass"
         android:layout_marginTop="20dp"
         android:background="@color/colorDarkApp"
         android:text="SIGN UP"
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonLoginAdmin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonRegister"
@@ -81,5 +81,22 @@
         android:background="@color/colorDarkApp"
         android:text="LOGIN"
         android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/loginadmin"
+        android:layout_width="128dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/buttonLoginAdmin"
+        android:layout_alignStart="@+id/buttonLoginAdmin"
+        android:layout_alignEnd="@+id/buttonLoginAdmin"
+        android:layout_alignBottom="@+id/buttonLoginAdmin"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="-55dp"
+        android:onClick="loginAdmin"
+        android:text="Login as Admin"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
