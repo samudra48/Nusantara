@@ -57,6 +57,7 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -195,6 +196,12 @@ public class HomeFragment extends Fragment {
             case R.id.option_logout:
                 mAuth.signOut();
                 startActivity(new Intent(getContext(), MainActivity.class));
+                getActivity().finish();
+                break;
+
+
+            case R.id.setting:
+                startActivity(new Intent(getContext(), setting.class));
                 getActivity().finish();
                 break;
 

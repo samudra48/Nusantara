@@ -2,11 +2,14 @@ package com.example.nusantara;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -27,8 +30,25 @@ public class MainActivity extends AppCompatActivity {
     String mMail, mPass;
     ProgressDialog dialog;
 
+
+    final String PREF_NIGHT_MODE = "NightMode";
+    SharedPreferences spNight;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        spNight = getSharedPreferences(PREF_NIGHT_MODE , Context.MODE_PRIVATE);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+        }else{
+            setTheme(R.style.AppTheme);
+
+            if(spNight.getBoolean(PREF_NIGHT_MODE,false)){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+        }
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

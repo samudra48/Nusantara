@@ -1,6 +1,8 @@
 package com.example.nusantara;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,6 +10,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -36,9 +39,23 @@ public class DashboardUser extends AppCompatActivity implements BottomNavigation
     FirebaseAuth mAuth;
     FrameLayout fm;
     BottomNavigationView bottomNavigationView;
+    final String PREF_NIGHT_MODE = "NightMode";
+    SharedPreferences spNight;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        spNight = getSharedPreferences(PREF_NIGHT_MODE , Context.MODE_PRIVATE);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+        }else{
+            setTheme(R.style.AppTheme);
+
+            if(spNight.getBoolean(PREF_NIGHT_MODE,false)){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_user);
 
@@ -72,6 +89,7 @@ public class DashboardUser extends AppCompatActivity implements BottomNavigation
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
         Fragment fragment = null;
         switch (menuItem.getItemId()){
             case R.id.navigation_home:
