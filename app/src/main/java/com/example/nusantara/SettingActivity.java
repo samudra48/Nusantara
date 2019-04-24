@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-public class setting extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
 
     Button btnSave;
     Switch swNight, swFontSize;
@@ -25,12 +25,12 @@ public class setting extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        spNight = getSharedPreferences(PREF_NIGHT_MODE , Context.MODE_PRIVATE);
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.DarkTheme);
         }else{
             setTheme(R.style.AppTheme);
 
-            spNight = getSharedPreferences(PREF_NIGHT_MODE , Context.MODE_PRIVATE);
             if(spNight.getBoolean(PREF_NIGHT_MODE,false)){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             }
@@ -58,32 +58,32 @@ public class setting extends AppCompatActivity {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             swNight.setChecked(true);
         }
-        swNight.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                }else{
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                }
-            }
-        });
     }
 
     private void saveConfig() {
+        if (swNight.isChecked()){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            editNight = spNight.edit();
+            editNight.putBoolean(PREF_NIGHT_MODE, true);
+            editNight.apply();
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            editNight = spNight.edit();
+            editNight.putBoolean(PREF_NIGHT_MODE, false);
+            editNight.apply();
+        }
+
         if (swFontSize.isChecked()){
             editFont = spFont.edit();
             editFont.putBoolean(PREF_FONT_SIZE, true);
             editFont.apply();
+        }else{
+            editFont = spFont.edit();
+            editFont.putBoolean(PREF_FONT_SIZE, false);
+            editFont.apply();
         }
 
-        if (swNight.isChecked()){
-            editNight = spNight.edit();
-            editNight.putBoolean(PREF_NIGHT_MODE, true);
-            editNight.apply();
-        }
-
-        Intent i = new Intent(setting.this, MainActivity.class);
+        Intent i = new Intent(SettingActivity.this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);

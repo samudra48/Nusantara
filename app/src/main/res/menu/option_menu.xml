@@ -3,7 +3,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/setting"
+        android:id="@+id/option_setting"
         android:title="Setting" />
     <item android:id="@+id/option_logout"
         android:title="Log Out" />

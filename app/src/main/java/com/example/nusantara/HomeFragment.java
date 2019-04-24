@@ -63,6 +63,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true);
+        mAuth = FirebaseAuth.getInstance();
         view = inflater.inflate(R.layout.fragment_home, container, false);
         return view;
     }
@@ -200,8 +201,8 @@ public class HomeFragment extends Fragment {
                 break;
 
 
-            case R.id.setting:
-                startActivity(new Intent(getContext(), setting.class));
+            case R.id.option_setting:
+                startActivity(new Intent(getContext(), SettingActivity.class));
                 getActivity().finish();
                 break;
 

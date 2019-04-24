@@ -21,7 +21,7 @@
         <item name="backgroundcolor">#303030</item>
         <item name="cardbackgroundcolor">#424242</item>
         <item name="textcolor">@android:color/white</item>
-        </style>
+    </style>
 
 
 </resources>
