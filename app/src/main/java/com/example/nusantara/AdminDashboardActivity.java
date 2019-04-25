@@ -47,4 +47,4 @@ public class AdminDashboardActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    }
+}
