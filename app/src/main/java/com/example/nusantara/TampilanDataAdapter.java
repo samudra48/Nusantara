@@ -42,7 +42,12 @@ public class TampilanDataAdapter extends RecyclerView.Adapter<TampilanDataAdapte
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, TampilanFotoUploadan.class) );
+                Intent i = new Intent(context, TampilanFotoUploadan.class);
+                i.putExtra("nama", itemData.nama);
+                i.putExtra("deskripsi", itemData.deskripsi);
+                i.putExtra("gambar", itemData.img);
+
+                context.startActivity(i);
             }
         });
     }
