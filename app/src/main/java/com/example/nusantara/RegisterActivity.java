@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -112,9 +113,13 @@ public class RegisterActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            toast("Successfully register user with email" + user.getEmail());
-                            startActivity(new Intent(RegisterActivity.this, DashboardUser.class));
-                            finish();
+                            if (user != null) {
+                                UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(mName).build();
+                                user.updateProfile(profileChangeRequest);
+                                toast("Successfully register user with email" + user.getEmail());
+                                startActivity(new Intent(RegisterActivity.this, DashboardUser.class));
+                                finish();
+                            }
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(RegisterActivity.this, task.getResult().toString(),
