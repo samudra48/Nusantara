@@ -15,12 +15,7 @@ import android.widget.Toast;
 
 import com.example.nusantara.model.Comment;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -29,7 +24,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.annotation.Nullable;
 
@@ -54,7 +48,7 @@ public class TampilanFotoUploadan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampilan_foto_uploadan);
 
-        img_uplodan= findViewById(R.id.img_upload);
+        img_uplodan= findViewById(R.id.img_uploadadmin);
         tv_captionuploadan= findViewById(R.id.tv_captionan );
         tv_captionlain = findViewById(R.id.tv_capsionlain);
         mComment = (EditText) findViewById(R.id.comment);

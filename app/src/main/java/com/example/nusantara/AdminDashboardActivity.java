@@ -3,6 +3,7 @@ package com.example.nusantara;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.nusantara.model.ItemModel;
 
@@ -23,6 +25,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
     RecyclerView dasboard_admin;
     AdapterAdmin adapter_admin;
     List<ItemModel> mList;
+    FloatingActionButton buttonFloating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,14 @@ public class AdminDashboardActivity extends AppCompatActivity {
         adapter_admin = new AdapterAdmin(mList, this);
         dasboard_admin.setAdapter(adapter_admin);
 
+        buttonFloating = findViewById(R.id.fab_admin);
+        buttonFloating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminDashboardActivity.this,UploadDataAdmin.class));
+            }
+        });
+
 
     }
 
@@ -58,11 +69,9 @@ public class AdminDashboardActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.option_logoutadmin:
-                startActivity(new Intent(getBaseContext(),LoginAdminActivity.class));
-                finish();
-                break;
+        if (item.getItemId() == R.id.option_logoutadmin) {
+            startActivity(new Intent(getBaseContext(), LoginAdminActivity.class));
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
