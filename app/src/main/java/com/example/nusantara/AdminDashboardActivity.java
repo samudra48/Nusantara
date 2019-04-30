@@ -6,13 +6,23 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.nusantara.model.ItemModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminDashboardActivity extends AppCompatActivity {
     final String PREF_NIGHT_MODE = "NightMode";
     SharedPreferences spNight;
 
+    RecyclerView dasboard_admin;
+    AdapterAdmin adapter_admin;
+    List<ItemModel> mList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +39,15 @@ public class AdminDashboardActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
+
+        dasboard_admin = findViewById(R.id.rv_admin);
+        mList = new ArrayList<>();
+
+        dasboard_admin.setLayoutManager(new LinearLayoutManager(this));
+        adapter_admin = new AdapterAdmin(mList, this);
+        dasboard_admin.setAdapter(adapter_admin);
+
+
     }
 
     @Override
