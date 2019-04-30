@@ -27,6 +27,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -36,6 +37,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.UUID;
 
 public class UnggahFoto extends AppCompatActivity {
 
@@ -212,16 +214,12 @@ public class UnggahFoto extends AppCompatActivity {
     }
 
     private void saveDb() {
-        FirebaseFirestore.getInstance().collection("ItemProvinsi").add(new ItemData(imgUrl,mName, mDesc)).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        String id = UUID.randomUUID().toString();
+        DocumentReference a = FirebaseFirestore.getInstance().document("ItemProvinsi/"+id);
+        a.set(new ItemData(imgUrl,mName, mDesc,id)).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentReference> task) {
-                if (task.isSuccessful()){
-                    dialog.dismiss();
-
-                    backToMain();
-//                    Intent i = new Intent(UnggahFoto.this, DashboardUser.class);
-//                    startActivity(i);
-                }
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) backToMain();
             }
         });
     }

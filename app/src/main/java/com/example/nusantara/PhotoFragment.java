@@ -47,8 +47,6 @@ public class PhotoFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         mList = new ArrayList<>();
-        adapter = new TampilanDataAdapter(mList, getContext());
-        recyclerView.setAdapter(adapter);
 
         db = FirebaseFirestore.getInstance();
         db.collection("ItemProvinsi").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -57,12 +55,13 @@ public class PhotoFragment extends Fragment {
 
                 if (task.isSuccessful() && task.getResult() != null){
                     for (QueryDocumentSnapshot doc: task.getResult()){
-
                         ItemData tampilan = doc.toObject(ItemData.class);
 
                         mList.add(tampilan);
 
                     }
+                    adapter = new TampilanDataAdapter(mList, getContext());
+                    recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 }
 

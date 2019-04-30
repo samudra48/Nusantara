@@ -46,6 +46,7 @@ public class TampilanDataAdapter extends RecyclerView.Adapter<TampilanDataAdapte
                 i.putExtra("nama", itemData.nama);
                 i.putExtra("deskripsi", itemData.deskripsi);
                 i.putExtra("gambar", itemData.img);
+                i.putExtra("uid", itemData.uid);
 
                 context.startActivity(i);
             }

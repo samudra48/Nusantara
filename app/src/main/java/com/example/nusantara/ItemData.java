@@ -1,6 +1,7 @@
 package com.example.nusantara;
 
 public class ItemData {
+    String uid;
     String img;
     String nama;
     String deskripsi;
@@ -9,10 +10,11 @@ public class ItemData {
 
     }
 
-    public ItemData(String img, String nama, String deskripsi) {
+    public ItemData(String img, String nama, String deskripsi, String uid) {
         this.img = img;
         this.nama = nama;
         this.deskripsi = deskripsi;
+        this.uid = uid;
     }
 
     public String getImg() {
@@ -37,5 +39,13 @@ public class ItemData {
 
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
