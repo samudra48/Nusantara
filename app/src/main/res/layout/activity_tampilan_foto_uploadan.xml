@@ -18,7 +18,7 @@
     tools:context=".TampilanFotoUploadan">
 
     <ImageView
-        android:id="@+id/img_upload"
+        android:id="@+id/img_uploadadmin"
         android:layout_width="0dp"
         android:layout_height="238dp"
         android:layout_marginStart="16dp"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_upload" />
+        app:layout_constraintTop_toBottomOf="@+id/img_uploadadmin" />
 
     <TextView
         android:id="@+id/tv_capsionlain"

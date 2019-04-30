@@ -38,15 +38,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
-public class UnggahFoto extends AppCompatActivity {
+public class UploadDataAdmin extends AppCompatActivity {
 
     private static final int REQUEST_GET_SINGLE_FILE = 101;
     private static final int REQUEST_CAPTURE_IMAGE = 102;
     private static final String TAG = "InputActivity";
-    ImageView uploadfoto;
-    Button btnFoto, btnUnggah;
-    EditText nmDaerah, dsDaerah;
-    String  mName, mDesc, imgUrl;
+    ImageView uploadfotoadmin;
+    Button btnFotoadmin, btnUnggahadmin;
+    EditText nmDaerahadmin, dsDaerahadmin, etCategory;
+    String  mNameadmin, mDescadmin, imgUrladmin;
 
     ProgressDialog dialog;
     Uri uri;
@@ -56,7 +56,6 @@ public class UnggahFoto extends AppCompatActivity {
 
     final String PREF_NIGHT_MODE = "NightMode";
     SharedPreferences spNight;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         spNight = getSharedPreferences(PREF_NIGHT_MODE , Context.MODE_PRIVATE);
@@ -72,11 +71,12 @@ public class UnggahFoto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unggah_foto);
 
-        uploadfoto = findViewById(R.id.img_uploadadmin);
-        btnFoto = findViewById(R.id.btn_uploadadin);
-        btnUnggah = findViewById(R.id.btn_unggahadmin);
-        nmDaerah = findViewById(R.id.txt_nama_daerahadmin);
-        dsDaerah = findViewById(R.id.txt_deskadmin);
+        uploadfotoadmin = findViewById(R.id.img_uploadadmin);
+        btnFotoadmin = findViewById(R.id.btn_uploadadin);
+        btnUnggahadmin = findViewById(R.id.btn_unggahadmin);
+        nmDaerahadmin = findViewById(R.id.txt_nama_daerahadmin);
+        dsDaerahadmin = findViewById(R.id.txt_deskadmin);
+        etCategory = findViewById(R.id.editText_kategori);
 
         dialog = new ProgressDialog(this);
         dialog.setTitle("Tunggu sebentar");
@@ -84,24 +84,24 @@ public class UnggahFoto extends AppCompatActivity {
         dialog.setProgress(0);
         dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
-        btnFoto.setOnClickListener(new View.OnClickListener() {
+        btnFotoadmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery();
             }
         });
 
-        btnUnggah.setOnClickListener(new View.OnClickListener() {
+        btnUnggahadmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mName = nmDaerah.getText().toString();
-                mDesc = dsDaerah.getText().toString();
+                mNameadmin = nmDaerahadmin.getText().toString();
+                mDescadmin = dsDaerahadmin.getText().toString();
 
-                if (mName.isEmpty()){
+                if (mNameadmin.isEmpty()){
                     toast("Nama daerah harus diisi");
                     return;
                 }
-                if (mDesc.isEmpty()){
+                if (mDescadmin.isEmpty()){
                     toast("Deskripsi harus diisi");
                     return;
                 }
@@ -119,7 +119,7 @@ public class UnggahFoto extends AppCompatActivity {
             if (requestCode == REQUEST_CAPTURE_IMAGE) {
                 if (data != null && data.getExtras() != null) {
                     bitmap = (Bitmap) data.getExtras().get("data");
-                    uploadfoto.setImageBitmap(bitmap);
+                    uploadfotoadmin.setImageBitmap(bitmap);
                 }
             } else if (requestCode == REQUEST_GET_SINGLE_FILE) {
                 uri = data.getData();
@@ -128,7 +128,7 @@ public class UnggahFoto extends AppCompatActivity {
                             uri);
                     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 90, outputStream);
-                    uploadfoto.setImageBitmap(bitmap);
+                    uploadfotoadmin.setImageBitmap(bitmap);
 
                     selectedImageBytes = outputStream.toByteArray();
 
@@ -184,7 +184,9 @@ public class UnggahFoto extends AppCompatActivity {
     private void saveData() {
         dialog.show();
 
-        final StorageReference up = FirebaseStorage.getInstance().getReference().child(FirebaseAuth.getInstance().getCurrentUser().getUid()+""+System.currentTimeMillis());
+        String cat = etCategory.getText().toString();
+
+        final StorageReference up = FirebaseStorage.getInstance().getReference().child(cat+""+System.currentTimeMillis());
 
         if(selectedImageBytes != null){
             up.putBytes(selectedImageBytes).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -193,7 +195,7 @@ public class UnggahFoto extends AppCompatActivity {
                     up.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            imgUrl = uri.toString();
+                            imgUrladmin = uri.toString();
 
                             saveDb();
                         }
@@ -214,8 +216,8 @@ public class UnggahFoto extends AppCompatActivity {
 
     private void saveDb() {
         String id = UUID.randomUUID().toString();
-        DocumentReference a = FirebaseFirestore.getInstance().document("ItemProvinsi/"+id);
-        a.set(new ItemData(imgUrl,mName, mDesc,id)).addOnCompleteListener(new OnCompleteListener<Void>() {
+        DocumentReference a = FirebaseFirestore.getInstance().document("rekomen/"+id);
+        a.set(new ItemData(imgUrladmin,mNameadmin, mDescadmin,id)).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) backToMain();
@@ -224,7 +226,7 @@ public class UnggahFoto extends AppCompatActivity {
     }
 
     private void backToMain(){
-        Intent i = new Intent(UnggahFoto.this, DashboardUser.class);
+        Intent i = new Intent(UploadDataAdmin.this, AdminDashboardActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
@@ -235,4 +237,6 @@ public class UnggahFoto extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
+
 }
+
